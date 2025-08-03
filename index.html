@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Restaurant Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Restaurant</h1>
+    <nav>
+      <button onclick="filterMenu('all')">All</button>
+      <button onclick="filterMenu('starters')">Starters</button>
+      <button onclick="filterMenu('mains')">Mains</button>
+      <button onclick="filterMenu('drinks')">Drinks</button>
+      <button onclick="filterMenu('desserts')">Desserts</button>
+    </nav>
+  </header>
+
+  <main id="menu">
+    <!-- Sample Items -->
+    <div class="menu-item starters">
+      <h3>Bruschetta</h3>
+      <p>Grilled bread with tomato and basil</p>
+      <span>$5.00</span>
+    </div>
+
+    <div class="menu-item mains">
+      <h3>Grilled Chicken</h3>
+      <p>Served with veggies and mashed potatoes</p>
+      <span>$12.99</span>
+    </div>
+
+    <div class="menu-item drinks">
+      <h3>Lemonade</h3>
+      <p>Freshly squeezed lemons with mint</p>
+      <span>$2.50</span>
+    </div>
+
+    <div class="menu-item desserts">
+      <h3>Chocolate Cake</h3>
+      <p>Rich dark chocolate with vanilla ice cream</p>
+      <span>$4.50</span>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 My Restaurant</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

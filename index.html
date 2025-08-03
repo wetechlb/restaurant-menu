@@ -3,50 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Restaurant Menu</title>
+  <title>Mr.Burger</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>My Restaurant</h1>
+    <img src="logo.png" alt="Restaurant Logo" class="logo" />
+    <h1>Mr.Burger</h1>
     <nav>
-      <button onclick="filterMenu('all')">All</button>
-      <button onclick="filterMenu('starters')">Starters</button>
-      <button onclick="filterMenu('mains')">Mains</button>
-      <button onclick="filterMenu('drinks')">Drinks</button>
-      <button onclick="filterMenu('desserts')">Desserts</button>
+      <button data-category="all" class="active">All</button>
+      <button data-category="OBurger" class="active">Original Burger</button>
+      <button data-category="Sandwish" class="active">Sandwish</button>
+      <button data-category="Strips" class="active">Strips</button>
+      <button data-category="drinks" class="active">Drinks</button>
     </nav>
   </header>
 
   <main id="menu">
     <!-- Sample Items -->
-    <div class="menu-item starters">
-      <h3>Bruschetta</h3>
-      <p>Grilled bread with tomato and basil</p>
-      <span>$5.00</span>
+    <div class="menu-item OBurger">
+      <h3>Classic Chicken</h3>
+      <p>Chicken,lettuse,tomato,onion,mayo,withfries</p>
+      <span>350,000</span>
     </div>
 
-    <div class="menu-item mains">
-      <h3>Grilled Chicken</h3>
-      <p>Served with veggies and mashed potatoes</p>
-      <span>$12.99</span>
+    <div class="menu-item Sandwish">
+      <h3>Potato Sandwish</h3>
+      <p>Fries,Katchup,garlic,colslow</p>
+      <span>110,000</span>
     </div>
 
     <div class="menu-item drinks">
-      <h3>Lemonade</h3>
-      <p>Freshly squeezed lemons with mint</p>
-      <span>$2.50</span>
+      <h3>Water</h3>
+      <span>20,000</span>
     </div>
 
-    <div class="menu-item desserts">
-      <h3>Chocolate Cake</h3>
-      <p>Rich dark chocolate with vanilla ice cream</p>
-      <span>$4.50</span>
+    <div class="menu-item drinks">
+      <h3>Ayran</h3>
+      <span>60,000</span>
+    </div>
+
+    <div class="menu-item drinks">
+      <h3>Pepsi Plastique</h3>
+      <span>70,000</span>
+    </div>
+
+    <div class="menu-item drinks">
+      <h3>Pepsi Can</h3>
+      <span>80,000</span>
+    </div>
+
+    <div class="menu-item Strips">
+      <h3>3 Mozzarella Sticks</h3>
+      <span>150,000</span>
+    </div>
+
+    <div class="menu-item Strips">
+      <h3>3 Crispy peices</h3>
+      <span>200,000</span>
     </div>
   </main>
 
   <footer>
-    <p>© 2025 My Restaurant</p>
+    <p>© 2025 Mr.Burger</p>
+    <p>📞 Call for Delivery: <a href="tel:+96181313067">+961 81 31 30 67</a></p>
+  <a href="https://wa.me/+96181313067" target="_blank" class="whatsapp-button">
+    💬 Order on WhatsApp
+  </a>
   </footer>
 
   <script src="script.js"></script>

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Arial Black', sans-serif;
+    height: 100%;
+    color: white;
+  }
+  
+  header {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 40px;
+    background: transparent;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #F7941D;
+    letter-spacing: 1px;
+  }
+  
+  /* Menu button (hamburger) */
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hide checkbox */
+  #toggle {
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #F7941D;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    position: relative;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+  }
+  
+  .hero-text {
+    max-width: 600px;
+  }
+  
+  .since {
+    color: #F7941D;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .hero-text h1 {
+    font-size: 60px;
+    line-height: 1.1;
+  }
+  
+  .hero-text p {
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  
+  /* --------------------- */
+  /* 📱 Responsive Design  */
+  /* --------------------- */
+  
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+      margin-top: 10px;
+    }
+  
+    #toggle:checked + .menu-icon + .menu {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .overlay {
+      padding: 20px;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .hero-text h1 {
+      font-size: 36px;
+    }
+  
+    .hero-text p {
+      font-size: 12px;
+    }
+  }
+  

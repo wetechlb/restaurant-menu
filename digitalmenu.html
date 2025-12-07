@@ -3,344 +3,701 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+</style>
   <title>Mr.Burger</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Restaurant Logo" class="logo" />
-    
-    <nav>
+    <a href="index.html">
+    <img src="logo.png" alt="Restaurant Logo" class="logo"/>
+  </a>
+  <div class="menu-container">
+    <nav >
       <button data-category="all" class="active">All</button>
       <button data-category="OBurger">Original Burger</button>
-      <button data-category="Sandwich">Sandwich</button>
+      <button data-category="Sandwich">Sandwichs</button>
       <button data-category="Specials">Specials</button>
-	    <button data-category="Sub">Sub</button>
       <button data-category="Strips">Strips</button>
       <button data-category="Fries">Fries</button>
       <button data-category="plate">Plate</button>
-      <button data-category="Sauce">Sauce</button>
+      <!--New Category-->
+      <button data-category="Salads">Salads</button>
+      <button data-category="Sub">Sub</button>
+
+      <button data-category="Sauce">Sauce</button> 
       <button data-category="drinks">Drinks</button>
 
     </nav>
+    </div>
   </header>
 
   <main id="menu">
-    <!-- Sample Items -->
     <div class="menu-item OBurger">
-      <h3>Classic Chicken</h3>
-      <p>Chicken,lettuse,tomato,onion,mayo,with fries</p>
-      <span>350,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Classic beef</h3>
-      <p>beef,lettuse,tomato,onion,mayo,with fries</p>
-      <span>350,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Lebanese beef burger</h3>
-      <p>Chicken,colslow,fries,cocktails sauce</p>
-      <span>350,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Lebanese cheese burger</h3>
-      <p>beef,colslow,fries,Katchup,mayo,cheddar slice</p>
-      <span>380,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Classic cheese burger</h3>
-      <p>1 beef or 1 Chicken,lettuse,tomato,pickels,onion,mayo,cheddar slice,prunelle bun-with fries</p>
-      <span>380,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Double cheese burger</h3>
-      <p>beef,colslow,fries,Katchup,mayo,double cheddar</p>
-      <span>410,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Double Classic burger</h3>
-      <p>2 beef Pieces or 2 Chicken Pieces,lettuse,tomato,pickels,onion,mayo,prunelle bun-with fries</p>
-      <span>450,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Double Chicken burger</h3>
-      <p>2 Pieces Chicken,colslow,Katchup,mayo,fries</p>
-      <span>450,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Double beef burger</h3>
-      <p>2 Pieces beef ,colslow,Katchup,mayo,fries</p>
-      <span>450,000</span>
-    </div>
-
-    <div class="menu-item OBurger">
-      <h3>Lebanese Double beef burger and double cheese</h3>
-      <span>510,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Boneless Sandwich</h3>
-      <p>2 Pieces Crispy ,BBQ,Mayo,Cheddar Sauce,Chips Sticks,Tortilla, with Fries </p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/classic chicken.png" alt="Classic Chicken">
+      </div>
+      <div class="text-details">
+          <h3>Classic Chicken Burger</h3>
+          <p>Chicken, lettuse, tomato, onion, mayo, with fries</p>
+          <span>350,000</span>
+      </div>
     </div>
 	
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/classic beef.png" alt="Classic beef">
+      </div>
+      <div class="text-details">
+          <h3>Classic beef Burger</h3>
+          <p>beef,lettuse,tomato,onion,mayo,with fries</p>
+          <span>350,000</span>
+      </div>
+    </div>
+<!--Need Image-->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Lebanese beef burger">
+      </div>
+      <div class="text-details">
+          <h3>Lebanese beef burger</h3>
+          <p>Chicken,colslow,fries,cocktails sauce</p>
+          <span>350,000</span>
+      </div>
+    </div>
+    <!--New Item-->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Lebanese beef burger">
+      </div>
+      <div class="text-details">
+          <h3>Lebanese chicken burger</h3>
+          <p>Chicken,colslow,fries,cocktails sauce</p>
+          <span>350,000</span>
+      </div>
+    </div>
+<!--Need Image-->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Lebanese cheese burger">
+      </div>
+      <div class="text-details">
+          <h3>Lebanese cheese burger</h3>
+          <p>beef, colslow, fries, Katchup, mayo, cheddar slice</p>
+          <span>380,000</span>
+      </div>
+    </div>
+<!---Need Image--->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Classic cheese burger">
+      </div>
+      <div class="text-details">
+          <h3>Classic cheese burger</h3>
+          <p>1 beef or 1 Chicken, lettuse, tomato, pickels, onion,mayo,cheddar slice,prunelle bun-with fries</p>
+          <span>380,000</span>
+      </div>
+    </div>
+<!---Need Image--->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Double cheese burger">
+      </div>
+      <div class="text-details">
+          <h3>Double cheese burger</h3>
+          <p>beef,colslow,fries,Katchup,mayo,double cheddar</p>
+          <span>410,000</span>
+      </div>
+    </div>
+<!--Need Image-->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Double Classic burger">
+      </div>
+      <div class="text-details">
+          <h3>Double Classic burger</h3>
+          <p>2 beef Pieces or 2 Chicken Pieces, lettuse, tomato, pickels, onion, mayo, prunelle bun-with fries</p>
+          <span>450,000</span>
+      </div>
+    </div>
+
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/double chicken burger.png" alt="Double Chicken burger">
+      </div>
+      <div class="text-details">
+          <h3>Double Chicken burger</h3>
+          <p>2 Pieces Chicken, colslow, Katchup, mayo, fries</p>
+          <span>450,000</span>
+      </div>
+    </div>
+
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/double beef burger.png" alt="Double beef burger">
+      </div>
+      <div class="text-details">
+          <h3>Double beef burger</h3>
+          <p>2 Pieces beef, colslow, Katchup, mayo, fries</p>
+          <span>450,000</span>
+      </div>
+    </div>
+<!--Need Image-->
+    <div class="menu-item OBurger">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Lebanese Double beef burger and double cheese">
+      </div>
+      <div class="text-details">
+          <h3>Lebanese Double beef burger and double cheese</h3>
+          <span>510,000</span>
+      </div>
+    </div>
+
+    
+	<!---sura--->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Potato Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Potato Sandwich</h3>
+          <p>Fries, Katchup, garlic, colslow</p>
+          <span>110,000</span>
+      </div>
+    </div>
+<!----sura--->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Beef Burger Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Beef Burger Sandwich</h3>
+          <p>beef,colslow,mayo Katchup,fries</p>
+          <span>300,000</span>
+      </div>
+    </div>
+<!----sura--->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Chicken Burger Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Chicken Burger Sandwich</h3>
+          <p>Chicken burger, colslow, Cocktail sauce, Fries</p>
+          <span>300,000</span>
+      </div>
+    </div>
+<!---sura--->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Tawook Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Tawook Sandwich</h3>
+          <p>Tawook,colslow,garlic,Fries</p>
+          <span>300,000</span>
+      </div>
+    </div>
+<!----sura and we should to write fahita code----->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Shawarma Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Shawarma Sandwich</h3>
+          <p>Chicken Shawarma,,garlic,Fries</p>
+          <span>300,000</span>
+      </div>
+    </div>
+<!---sura---->
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Crispy Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Crispy Sandwich</h3>
+          <p>2 Pieces crispy,colslow,garlic,Katchup,Fries</p>
+          <span>300,000</span>
+      </div>
+    </div>
+    <div class="menu-item Sandwich">
+      <div class="icon-box">
+          <img src="srcitems/Boneless Sandwich .jpg" alt="Boneless Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Boneless Sandwich</h3>
+          <p>2 Pieces Crispy, BBQ, Mayo, Cheddar Sauce, Chips Sticks, Tortilla, with Fries </p>
+          <span>450,000</span>
+      </div>
+    </div>
+	<!-----sura and we should to add spicy crunch sandwich (code)--->
 	    <div class="menu-item Sandwich">
-      <h3>Crunchy Sandwich</h3>
-      <p>2 Pieces Crispy,Katchup,mayo, Cheddar Sauce,Chips Sticks,Tortilla, with Fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/Crunchy Sandwich.jpg" alt="Crunchy Sandwich">
+      </div>
+      <div class="text-details">
+          <h3>Crunchy Sandwich</h3>
+          <p>2 Pieces Crispy, Katchup, mayo, Cheddar Sauce, Chips Sticks, Tortilla, with Fries</p>
+          <span>450,000</span>
+      </div>
     </div>
-	
+	<!----sura--->
 	    <div class="menu-item Sandwich">
-      <h3>Spicy Crunch Wrap</h3>
-      <p>2 pieces Crispy,lettuse,Spicy Sauce,Cocktail Sauce,Cheddar Sauce,Chips Sticks,Tortilla, with Fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/Spciy Crunch Sandwich.jpg" alt="Spicy Crunch Wrap">
+      </div>
+      <div class="text-details">
+          <h3>Spicy Crunch Wrap</h3>
+          <p>2 pieces Crispy, lettuse, Spicy Sauce, Cocktail Sauce, Cheddar Sauce, Chips Sticks, Tortilla, with Fries</p>
+          <span>450,000</span>
+      </div>
     </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Potato Sandwich</h3>
-      <p>Fries,Katchup,garlic,colslow</p>
-      <span>110,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Beef Burger Sandwich</h3>
-      <p>beef,colslow,mayo Katchup,fries</p>
-      <span>300,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Chicken Burger Sandwich</h3>
-      <p>Chicken burger,colslow,Cocktail sauce,Fries</p>
-      <span>300,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Tawuk Sandwich</h3>
-      <p>Tawuk,colslow,garlic,Fries</p>
-      <span>300,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Shawarma Sandwich</h3>
-      <p>Chicken Shawarma,,garlic,Fries</p>
-      <span>300,000</span>
-    </div>
-
-    <div class="menu-item Sandwich">
-      <h3>Crispy Sandwich</h3>
-      <p>2 Pieces crispy,colslow,garlic,Katchup,Fries</p>
-      <span>300,000</span>
+<!------sura--->
+    <div class="menu-item Specials">
+      <div class="icon-box">
+          <img src="srcitems/Mr.burger.png" alt="Mr.burger">
+      </div>
+      <div class="text-details">
+          <h3>Mr.burger</h3>
+          <p>Beef paty,Mozzarella paty,lettuse,tomato,Mayo sauce,BBQ Sauce,1 Sauce cup,1 Soft drink,prunelle bun,with Fries</p>
+          <span>650,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Mr.burger</h3>
-      <p>Beef paty,Mozzarella paty,lettuse,tomato,Mayo sauce,BBQ Sauce,1 Sauce cup,1 Soft drink,prunelle bun,with Fries</p>
-      <span>650,000</span>
+      <div class="icon-box">
+          <img src="srcitems/tawook burger.png" alt="Tawook Burger">
+      </div>
+      <div class="text-details">
+          <h3>Tawook Burger</h3>
+          <p>Tawook,garlic,pickels,colslow,fries</p>
+          <span>350,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Tawook Burger</h3>
-      <p>Tawook,garlic,pickels,colslow,fries</p>
-      <span>350,000</span>
+      <div class="icon-box">
+          <img src="srcitems/Mexican burger.jpg" alt="Mexican Burger">
+      </div>
+      <div class="text-details">
+          <h3>Mexican Burger</h3>
+          <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
+          <span>450,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Mexican Burger</h3>
-      <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/shawarma burger.jpg" alt="Shawarma Burger">
+      </div>
+      <div class="text-details">
+          <h3>Shawarma Burger</h3>
+          <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
+          <span>450,000</span>
+      </div>
+    </div>
+<!----sura--->
+    <div class="menu-item Specials">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Special Beef">
+      </div>
+      <div class="text-details">
+          <h3>Special Beef</h3>
+          <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
+          <span>450,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Shawarma Burger</h3>
-      <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/turkey burger.jpg" alt="Turkey Burger">
+      </div>
+      <div class="text-details">
+          <h3>Turkey Burger</h3>
+          <p>Chicken Burger,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
+          <span>450,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Special Beef</h3>
-      <p>Chicken,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/mushroom burger.jpg" alt="Mashroom Burger">
+      </div>
+      <div class="text-details">
+          <h3>Mashroom Burger</h3>
+          <span>450,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Turkey Burger</h3>
-      <p>Chicken Burger,mushroom,onion,green pepper,cheddar slice,cheddar sauce,fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/sitos burger.jpg" alt="Sitos Burger">
+      </div>
+      <div class="text-details">
+          <h3>Sitos Burger</h3>
+          <span>450,000</span>
+      </div>
+    </div>
+<!---sura--->
+    <div class="menu-item Specials">
+      <div class="icon-box">
+          <img src="srcitems/smash burger.jpg" alt="Smash Burger">
+      </div>
+      <div class="text-details">
+          <h3>Smash Burger</h3>
+          <span>500,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Mashroom Burger</h3>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/crunchy burger.jpg" alt="Crunshy Burger">
+      </div>
+      <div class="text-details">
+          <h3>Crunshy Burger</h3>
+          <span>500,000</span>
+      </div>
+    </div>
+<!---sura--->
+    <div class="menu-item Specials">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Mozzarella Burger">
+      </div>
+      <div class="text-details">
+          <h3>Mozzarella Burger</h3>
+          <span>550,000</span>
+      </div>
+    </div>
+<!----sura--->
+    <div class="menu-item Specials">
+      <div class="icon-box">
+          <img src="srcitems/crazy burger1.jpg" alt="Crazy Burger">
+      </div>
+      <div class="text-details">
+          <h3>Crazy Burger</h3>
+          <span>550,000</span>
+      </div>
     </div>
 
     <div class="menu-item Specials">
-      <h3>Sitos Burger</h3>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/zinger burger.jpg" alt="Zinger Burger">
+      </div>
+      <div class="text-details">
+          <h3>Zinger</h3>
+          <span>550,000</span>
+      </div>
     </div>
-
-    <div class="menu-item Specials">
-      <h3>Smash Burger</h3>
-      <span>500,000</span>
-    </div>
-
-    <div class="menu-item Specials">
-      <h3>Crunshy Burger</h3>
-      <span>500,000</span>
-    </div>
-
-    <div class="menu-item Specials">
-      <h3>Mozzarella Burger</h3>
-      <span>550,000</span>
-    </div>
-
-    <div class="menu-item Specials">
-      <h3>Crazy Burger</h3>
-      <span>550,000</span>
-    </div>
-
-    <div class="menu-item Specials">
-      <h3>Zinger</h3>
-      <span>550,000</span>
-    </div>
-	
-	 <div class="menu-item Sub">
-      <h3>Fahita Sub</h3>
-      <span>450,000</span>
-    </div>
-	
-	    <div class="menu-item Sub">
-      <h3>Mexicana sub</h3>
-      <span>450,000</span>
-    </div>
-
     <div class="menu-item Fries">
-      <h3>Small plate</h3>
-      <span>120,000</span>
+      <div class="icon-box">
+          <img src="srcitems/small fries.png" alt="Small plate">
+      </div>
+      <div class="text-details">
+          <h3>Small plate</h3>
+          <span>120,000</span>
+      </div>
     </div>
     
     <div class="menu-item Fries">
-      <h3>Medium plate</h3>
-      <span>250,000</span>
+      <div class="icon-box">
+          <img src="srcitems/medium fries.png" alt="Medium plate">
+      </div>
+      <div class="text-details">
+          <h3>Medium plate</h3>
+          <span>250,000</span>
+      </div>
     </div>
 
     <div class="menu-item Fries">
-      <h3>Large plate</h3>
-      <span>350,000</span>
+      <div class="icon-box">
+          <img src="srcitems/large fries.png" alt="Large plate">
+      </div>
+      <div class="text-details">
+          <h3>Large plate</h3>
+          <span>350,000</span>
+      </div>
+    </div>
+
+<!--New-->
+    <div class="menu-item Salads">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Small coleslaw">
+      </div>
+      <div class="text-details">
+          <h3>Small coleslaw</h3>
+          <span>50,000</span>
+      </div>
+    </div>
+    <div class="menu-item Salads">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Large coleslaw">
+      </div>
+      <div class="text-details">
+          <h3> Large coleslaw</h3>
+          <span>100,000</span>
+      </div>
+    </div>
+    <div class="menu-item Sub">
+      <div class="icon-box">
+          <img src="srcitems/mexicana.jpg" alt="Mexicana Sub">
+      </div>
+      <div class="text-details">
+          <h3>Mexicana Sub</h3>
+          <span>450.000</span>
+      </div>
+    </div>
+    <div class="menu-item Sub">
+      <div class="icon-box">
+          <img src="srcitems/fahita.jpg" alt="Fahita Sub">
+      </div>
+      <div class="text-details">
+          <h3> Fahita Sub</h3>
+          <span>450,000</span>
+      </div>
+    </div>
+    <!---sura---->
+    <div class="menu-item plate">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Plate burger">
+      </div>
+      <div class="text-details">
+          <h3>Plate burger</h3>
+          <span>450,000</span>
+      </div>
+    </div>
+<!--sura-->
+    <div class="menu-item plate">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Plate Crispy">
+      </div>
+      <div class="text-details">
+          <h3>Plate Crispy</h3>
+          <span>650,000</span>
+      </div>
+    </div>
+<!--sura-->
+    <div class="menu-item plate">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Plate Tawook">
+      </div>
+      <div class="text-details">
+          <h3>Plate Tawook</h3>
+          <span>550,000</span>
+      </div>
+    </div>
+<!--sura-->
+    <div class="menu-item plate">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Plate Shawarma">
+      </div>
+      <div class="text-details">
+          <h3>Plate Shawarma</h3>
+          <span>550,000</span>
+      </div>
+    </div>
+    <!--sura-->
+    <div class="menu-item plate">
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Plate Shawarma">
+      </div>
+      <div class="text-details">
+          <h3>Sliced Shawarma</h3>
+          <span>650,000</span>
+      </div>
     </div>
 
     <div class="menu-item plate">
-      <h3>Plate burger</h3>
-      <span>450,000</span>
-    </div>
-
-    <div class="menu-item plate">
-      <h3>Plate Crispy</h3>
-      <span>650,000</span>
-    </div>
-
-    <div class="menu-item plate">
-      <h3>Plate Tawuk</h3>
-      <span>550,000</span>
-    </div>
-
-    <div class="menu-item plate">
-      <h3>Plate Shawarma</h3>
-      <span>550,000</span>
-    </div>
-
-    <div class="menu-item plate">
-      <h3>Loaded Fries</h3>
-      <p>Fries,3 Pieces crispy,colslow,cheddar sauce,Katchup,mayo,chips sticks,prunelle bun with fries</p>
-      <span>450,000</span>
+      <div class="icon-box">
+          <img src="srcitems/loaded fries1.jpg" alt="Loaded Fries">
+      </div>
+      <div class="text-details">
+          <h3>Loaded Fries</h3>
+          <p>Fries, 3 Pieces crispy, colslow, cheddar sauce, Katchup, mayo, chips sticks, prunelle bun with fries</p>
+          <span>450,000</span>
+      </div>
     </div>
 
     <div class="menu-item drinks">
-      <h3>Water</h3>
-      <span>20,000</span>
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Water">
+      </div>
+      <div class="text-details">
+          <h3>Water</h3>
+          <span>20,000</span>
+      </div>
     </div>
 
     <div class="menu-item drinks">
-      <h3>Pepsi Plastic</h3>
-      <span>70,000</span>
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="Pepsi Plastic">
+      </div>
+      <div class="text-details">
+          <h3>Pepsi Plastic</h3>
+          <span>70,000</span>
+      </div>
     </div>
-
+	
+	<div class="menu-item drinks">
+      <div class="icon-box">
+          <img src="srcitems/mirinda.png" alt="mirinda">
+      </div>
+      <div class="text-details">
+          <h3>Mirinda Can</h3>
+          <span>80.000</span>
+      </div>
+    </div>
+	
+	<div class="menu-item drinks">
+      <div class="icon-box">
+          <img src="srcitems/7up.png" alt="7up">
+      </div>
+      <div class="text-details">
+          <h3>7up Can</h3>
+          <span>70,000</span>
+      </div>
+    </div>
+	
     <div class="menu-item drinks">
-      <h3>Pepsi Can</h3>
-      <span>80,000</span>
+      <div class="icon-box">
+          <img src="srcitems/pepsi.png" alt="Pepsi Can">
+      </div>
+      <div class="text-details">
+          <h3>Pepsi Can</h3>
+          <span>80,000</span>
+      </div>
     </div>
-
+<!---sura--->
     <div class="menu-item Strips">
-      <h3>3 Mozzarella Sticks</h3>
-      <span>150,000</span>
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="3 Mozzarella Sticks">
+      </div>
+      <div class="text-details">
+          <h3>3 Mozzarella Sticks</h3>
+          <span>150,000</span>
+      </div>
     </div>
-
+<!----sura--->
     <div class="menu-item Strips">
-      <h3>3 Crispy Pieces</h3>
-      <span>200,000</span>
+      <div class="icon-box">
+          <img src="srcitems/logo.png" alt="3 Crispy Pieces">
+      </div>
+      <div class="text-details">
+          <h3>3 Crispy Pieces</h3>
+          <span>200,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>ketchup Sauce</h3>
-      <span>20,000</span>
-    </div>
-
-        <div class="menu-item Sauce">
-      <h3>Mayo Sauce</h3>
-      <span>30,000</span>
-    </div>
-
-    <div class="menu-item Sauce">
-      <h3>Cocktail Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/ketchup sauce.jpg" alt="Ketchup Sauce">
+      </div>
+      <div class="text-details">
+          <h3>ketchup Sauce</h3>
+          <span>20,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>Sheddar Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/mayo sauce.jpg" alt="Mayo Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Mayo Sauce</h3>
+          <span>30,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>Garlic Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/cocktail sauce.jpg" alt="Cocktail Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Cocktail Sauce</h3>
+          <span>50,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>Avocado Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/cheddar sauce.jpg" alt="Sheddar Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Sheddar Sauce</h3>
+          <span>50,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>BBQ Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/garlic.jpg" alt="Garlic Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Garlic Sauce</h3>
+          <span>50,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>Honey Mustard Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/avoca sauce.jpg" alt="Avocado Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Avocado Sauce</h3>
+          <span>50,000</span>
+      </div>
     </div>
 
     <div class="menu-item Sauce">
-      <h3>Spicy Sauce</h3>
-      <span>50,000</span>
+      <div class="icon-box">
+          <img src="srcitems/BBQ sauce.jpg" alt="BBQ Sauce">
+      </div>
+      <div class="text-details">
+          <h3>BBQ Sauce</h3>
+          <span>50,000</span>
+      </div>
     </div>
- 
+
+    <div class="menu-item Sauce">
+      <div class="icon-box">
+          <img src="srcitems/honey mustard sauce.jpg" alt="Honey Mustard Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Honey Mustard Sauce</h3>
+          <span>50,000</span>
+      </div>
+    </div>
+
+    <div class="menu-item Sauce">
+      <div class="icon-box">
+          <img src="srcitems/spicy sauce.jpg" alt="Spicy Sauce">
+      </div>
+      <div class="text-details">
+          <h3>Spicy Sauce</h3>
+          <span>50,000</span>
+      </div>
+    </div>
+ <!--class ="right-align-footer"--crazy burger , double beef and double chicken Mr burger shawarma burger turkey burger these items need code ---->
+
   </main>
 
   <footer>
-    <p>© 2025 Mr.Burger</p>
-    <span class="phone-icon"></span>
+
+<div class="row">
+  <div class="column">
     <p>Call for Delivery: <a href="tel:+96181313067">+961 81 31 30 67</a></p>
-  <a href="https://wa.me/+96181313067" target="_blank" class="whatsapp-button">
-    💬 Order on WhatsApp
-  </a>
+  </div>
+  <div class="column">
+   <a href="https://wa.me/+96181313067" target="_blank" class="whatsapp-button">💬Order on WhatsApp</a>
+  </div>
+  <div class="column">
+        <p>© 2025 Mr.Burger</p>
+  </div>
+</div>
+
   </footer>
 
   <script src="script.js"></script>

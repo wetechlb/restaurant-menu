@@ -4,15 +4,17 @@ body {
   margin: 0;
   background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
- /* color: #333;*/
- color: ;
+  /* color: #333;*/
 }
 
 /* Optional: Add a semi-transparent overlay */
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(255, 255, 255, 0.85);
   z-index: -1;
 }
@@ -52,22 +54,90 @@ main {
   gap: 1.5rem;
 }
 
+/* --------------------------------- */
+/* MENU ITEM CARD STYLES (Horizontal Layout) */
+/* --------------------------------- */
+
 .menu-item {
+  /* This creates the horizontal (side-by-side) layout */
+  display: flex;
+  align-items: center;
+  /* Vertically centers the content */
+  gap: 15px;
+  /* Space between image and text */
+
+  /* Card Appearance */
   background-color: #ffffffdd;
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid #ddd;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.menu-container {
+    overflow-x: auto;        /* horizontal scroll */
+    overflow-y: hidden;      /* block vertical scroll */
+    white-space: nowrap;     /* keep buttons in one line */
+    padding: 10px;
+    scroll-behavior: smooth; /* optional: smooth scrolling */
 }
 
+/* Make nav inline horizontally */
+.menu-container nav {
+    display: inline-flex;
+    gap: 10px;
+}
+/* 1. The Orange Box Wrapper (Left side) */
+.icon-box {
+  width: 90px;
+  height: 90px;
+  background-color: #F7941D;
+  /* Your orange color */
+  border-radius: 8px;
+
+  /* 💡 ADD THIS LINE TO ENSURE THE IMAGE IS CLIPPED */
+  overflow: hidden;
+
+  /* Centers the actual image inside the orange box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* The actual image inside the box */
+.icon-box img {
+  width: 100%;
+  /* Adjust this to make the icon bigger/smaller */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 2. The Text Content Wrapper (Right side) */
+.text-details {
+  /* This forces the H3, P, and SPAN to stack vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Allows text to take up available space */
+  overflow-wrap: anywhere;
+  flex-grow: 1;
+}
+
+
+/* Individual Text Elements */
 .menu-item h3 {
-  margin-top: 0;
+  margin: 0;
+  /* Removed margin-top and invalid flex property */
+  font-size: 1rem;
 }
 
 .menu-item p {
-  font-size: 0.75rem; /* 👈 Smaller font size */
+  font-size: 0.75rem;
   color: #555;
-  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  /* Small space after title */
+  margin-bottom: 0.25rem;
+  /* Small space before price */
 }
 
 .menu-item span {
@@ -76,6 +146,9 @@ main {
   color: #F7941D;
 }
 
+/* --------------------------------- */
+/* NAV & FOOTER STYLES */
+/* --------------------------------- */
 .logo-container {
   display: flex;
   align-items: center;
@@ -115,6 +188,7 @@ nav button.active {
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
 }
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -125,26 +199,40 @@ footer {
 
 footer a {
   color: #000;
-  text-decoration: none;
+  text-decoration: wavy;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;       /* IMPORTANT for mobile responsiveness */
+    gap: 15px;             /* spacing when wrapping */
+    text-align: center;
 }
 
-.whatsapp-button {
-  display: inline-block;
-  margin-top: 0.5rem;
-  background-color: #25D366; /* WhatsApp green */
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+.column {
+    flex: 1;               /* each column takes equal width */
+    min-width: 150px;      /* prevents breaking on small screens */
 }
 
 .whatsapp-button:hover {
-  background-color: #1ebe5d;
+  background-color: #0932eb;
 }
+
+.whatsapp-button {
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
 .phone-icon {
-  color: #F7941D; /* Bright yellow */
+  color: #F7941D;
+  /* Bright yellow */
   font-size: 1.2rem;
   margin-right: 0.3rem;
 }
-

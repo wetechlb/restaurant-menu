@@ -5,7 +5,9 @@ function filterMenu(category) {
   // Show/hide items by category
   items.forEach(item => {
     const match = category === 'all' || item.classList.contains(category);
-    item.style.display = match ? 'block' : 'none';
+    
+    // 💡 FIX: Use 'flex' instead of 'block' to maintain the horizontal card layout
+    item.style.display = match ? 'flex' : 'none';
   });
 
   // Handle active button class

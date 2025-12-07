@@ -1,0 +1,123 @@
+/* ----------------------------------- */
+/* CSS Styling لتصميم مشابه للصورة */
+/* ----------------------------------- */
+
+body {
+    /* الخلفية الداكنة الأساسية */
+    background-color: #1a1a1a;
+    color: #ffffff; /* لون النص الأساسي أبيض */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* عنوان الصفحة الرئيسي */
+.header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+/* القسم الرئيسي الذي يحتوي على الخريطة والمعلومات */
+.main-content {
+    display: flex; /* لترتيب العناصر جنبًا إلى جنب */
+    gap: 40px;
+    text-align: left; /* جعل النص داخل الأقسام يبدأ من اليسار */
+    align-items: flex-start; /* تبدأ العناصر من الأعلى */
+}
+
+/* قسم الخريطة */
+.map-section {
+    flex: 1; /* يأخذ الخريطة المساحة المتبقية */
+    min-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* لإعطاء الخريطة بعض الظل */
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 400px; /* يمكن تعديل الارتفاع حسب الرغبة */
+    border: none;
+}
+
+/* قسم المعلومات (العنوان، الساعات، إلخ) */
+.info-section {
+    flex: 1.2; /* يأخذ جزء أكبر قليلاً من الخريطة */
+    padding-left: 20px;
+}
+
+/* التنسيق الخاص بالعناوين الفرعية (HOURS, JOIN US) */
+.info-section h2 {
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* تنسيق العنوان الأساسي ورقم الهاتف */
+.address-info p {
+    font-size: 1.5em;
+    line-height: 1.3;
+    color: #ff0000; /* اللون الأحمر المميز في الصورة */
+    margin: 5px 0;
+}
+
+.address-info .phone {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #ffffff; /* لون النص الأبيض لرقم الهاتف */
+}
+
+/* تنسيق تفاصيل الإدارة/الملكية */
+.management-details p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.management-details .name {
+    color: #ff0000; /* اللون الأحمر لأسماء المالكين */
+}
+
+/* تنسيق ساعات العمل */
+.hours-details p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #ff0000;
+}
+
+/* تنسيق قسم "Join Us" */
+.join-us-details p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.join-us-details a {
+     color: #ff0000;
+     text-decoration: underline;
+}
+
+/* جعل التصميم متجاوبًا للهواتف */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column; /* ترتيب العناصر فوق بعضها في الشاشات الصغيرة */
+        gap: 20px;
+    }
+    .info-section {
+        padding-left: 0;
+        text-align: center; /* توسيط النص في الشاشات الصغيرة */
+    }
+    .address-info {
+        text-align: center;
+    }
+    .map-section {
+        min-width: 100%;
+    }
+}

@@ -6,7 +6,24 @@ body {
   background-size: cover;
   /* color: #333;*/
 }
+/* For New Item Ribbon */
+.icon-box {
+    position: relative;
+}
 
+.ribbon {
+    position: absolute;
+    top: 12px;
+    left: -28px;
+    background: #d62828;
+    color: #fff;
+    padding: 4px 40px;
+    font-size: 11px;
+    font-weight: 600;
+    transform: rotate(-45deg);
+    letter-spacing: 1px;
+}
+/* ------------------------------ */
 /* Optional: Add a semi-transparent overlay */
 body::before {
   content: '';

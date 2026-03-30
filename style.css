@@ -253,3 +253,24 @@ footer a {
   font-size: 1.2rem;
   margin-right: 0.3rem;
 }
+
+.prices {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.prices span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.prices span:first-child {
+    color: #444;
+}
+
+.prices span:last-child {
+    color: #ff7a00;
+    font-size: 15px;
+}

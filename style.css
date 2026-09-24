@@ -76,14 +76,11 @@ main {
 /* --------------------------------- */
 
 .menu-item {
-  /* This creates the horizontal (side-by-side) layout */
-  display: flex;
-  align-items: center;
-  /* Vertically centers the content */
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  align-items: start;
   gap: 15px;
-  /* Space between image and text */
 
-  /* Card Appearance */
   background-color: #ffffffdd;
   padding: 1rem;
   border-radius: 8px;
@@ -161,6 +158,27 @@ main {
   display: block;
   font-weight: bold;
   color: #F7941D;
+}
+
+.order-button {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 5px;
+  background-color: #25D366;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.order-button:hover,
+.order-button:focus-visible {
+  background-color: #128C7E;
+  transform: translateY(-1px);
 }
 
 /* --------------------------------- */

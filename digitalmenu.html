@@ -19,8 +19,10 @@
     <img src="logo.webp" alt="Restaurant Logo" class="logo" fetchpriority="high" decoding="async"/>
   </a>
 
-  <div class="menu-container">
-    <nav >
+    <div class="menu-tools">
+        <button class="search-toggle" type="button" aria-label="Open menu search" aria-expanded="false"></button>
+        <div class="menu-container">
+            <nav >
       <button data-category="all" class="active">All</button>
       <button data-category="OBurger">Original Burger</button>
       <button data-category="Sandwich">Sandwichs</button>
@@ -35,12 +37,13 @@
       <button data-category="Sauce">Sauce</button> 
       <button data-category="drinks">Drinks</button>
 
-        </nav>
+            </nav>
+        </div>
+        <label class="menu-search" for="menu-search-input">
+            <span>Search menu</span>
+            <input id="menu-search-input" type="search" placeholder="Search burgers, combos, sauces..." autocomplete="off">
+        </label>
     </div>
-    <label class="menu-search" for="menu-search-input">
-        <span>Search menu</span>
-        <input id="menu-search-input" type="search" placeholder="Search burgers, combos, sauces..." autocomplete="off">
-    </label>
   </header>
 
     <section class="featured-slider" aria-label="Featured products">

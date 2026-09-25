@@ -163,6 +163,40 @@
   
     .menu-icon {
       display: block;
+      width: 44px;
+      height: 44px;
+      padding: 11px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 4px auto;
+      border-radius: 2px;
+      background: white;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    #toggle:checked + .menu-icon {
+      background: #F7941D;
+    }
+
+    #toggle:checked + .menu-icon span:first-child {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #toggle:checked + .menu-icon span:last-child {
+      transform: translateY(-6px) rotate(-45deg);
     }
   
     .overlay {

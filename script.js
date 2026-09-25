@@ -131,13 +131,39 @@ function updateCart() {
   });
 }
 
-function getNumericPrice(priceText) {
-  if (/regular|large/i.test(priceText)) {
-    return null;
+function getPriceOptions(priceText) {
+  if (typeof priceText !== 'string') return { regular: null, large: null };
+
+  const regularMatch = priceText.match(/regular\s*[:\-]?\s*([\d.,]+)/i);
+  const largeMatch = priceText.match(/large\s*[:\-]?\s*([\d.,]+)/i);
+
+  return {
+    regular: regularMatch ? Number(regularMatch[1].replace(/,/g, '')) : null,
+    large: largeMatch ? Number(largeMatch[1].replace(/,/g, '')) : null,
+  };
+}
+
+function getNumericPrice(priceText, variant = 'regular') {
+  if (typeof priceText !== 'string') return null;
+
+  const options = getPriceOptions(priceText);
+  if (options.regular !== null || options.large !== null) {
+    const selectedVariant = variant.toLowerCase() === 'large' ? options.large : options.regular;
+    return selectedVariant ?? options.regular ?? options.large ?? null;
   }
 
-  const number = priceText.match(/[\d.,]+/)?.[0];
-  return number ? Number(number.replace(/[.,]/g, '')) : null;
+  const numbers = Array.from(priceText.matchAll(/[\d.,]+/g), match => Number(match[0].replace(/,/g, '')));
+  if (!numbers.length) return null;
+  if (numbers.length > 1) {
+    return variant.toLowerCase() === 'large' ? numbers[1] : numbers[0];
+  }
+
+  return numbers[0];
+}
+
+function hasSizePricing(priceText) {
+  const options = getPriceOptions(priceText || '');
+  return options.regular !== null && options.large !== null;
 }
 
 function formatPrice(price) {
@@ -200,7 +226,7 @@ function sendCartToWhatsApp() {
 
 function addOrderButtons() {
 
-  document.querySelectorAll('.menu-item').forEach(item => {
+  document.querySelectorAll('.menu-item').forEach((item, index) => {
     const details = item.querySelector('.text-details');
     const name = details?.querySelector('h3')?.textContent.trim();
     const prices = details?.querySelector('.prices')?.textContent.trim()
@@ -212,12 +238,55 @@ function addOrderButtons() {
       return;
     }
 
+    const sizeOptions = getPriceOptions(prices || '');
+    const hasSizeOptions = sizeOptions.regular !== null && sizeOptions.large !== null;
+    const sizeName = `size-${index}-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+    if (hasSizeOptions) {
+      details.querySelectorAll('.prices').forEach(priceBlock => priceBlock.remove());
+
+      const sizeSelector = document.createElement('div');
+      sizeSelector.className = 'size-selector';
+      sizeSelector.innerHTML = `
+        <label data-size="regular">
+          <input type="radio" name="${sizeName}" value="regular" checked>
+          <span>Regular: ${formatPrice(sizeOptions.regular)}</span>
+        </label>
+        <label data-size="large">
+          <input type="radio" name="${sizeName}" value="large">
+          <span>Large: ${formatPrice(sizeOptions.large)}</span>
+        </label>
+      `;
+
+      const syncSizeSelection = () => {
+        sizeSelector.querySelectorAll('label').forEach(label => {
+          const input = label.querySelector('input');
+          label.classList.toggle('is-selected', input.checked);
+        });
+      };
+
+      sizeSelector.querySelectorAll('input').forEach(input => {
+        input.addEventListener('change', syncSizeSelection);
+      });
+      syncSizeSelection();
+      details.appendChild(sizeSelector);
+    }
+
     const orderButton = document.createElement('button');
     orderButton.className = 'order-button';
     orderButton.type = 'button';
     orderButton.innerHTML = '🛍 Add to bag';
     orderButton.addEventListener('click', () => {
-      addToCart(name, prices || 'Price unavailable');
+      let selectedPrice = prices || 'Price unavailable';
+
+      if (hasSizeOptions) {
+        const checkedInput = item.querySelector(`input[name="${sizeName}"]:checked`);
+        const selectedVariant = checkedInput ? checkedInput.value : 'regular';
+        const selectedValue = selectedVariant === 'large' ? sizeOptions.large : sizeOptions.regular;
+        selectedPrice = `${selectedVariant === 'large' ? 'Large' : 'Regular'}: ${formatPrice(selectedValue)}`;
+      }
+
+      addToCart(name, selectedPrice);
       showBagToast(name);
       orderButton.classList.remove('is-added');
       void orderButton.offsetWidth;
@@ -277,6 +346,24 @@ document.querySelectorAll('nav button').forEach(button => {
 document.querySelector('#menu-search-input')?.addEventListener('input', () => {
   const activeButton = document.querySelector('nav button.active');
   filterMenu(activeButton?.dataset.category || 'all');
+});
+
+const menuTools = document.querySelector('.menu-tools');
+const searchToggle = document.querySelector('.search-toggle');
+const menuSearchInput = document.querySelector('#menu-search-input');
+
+searchToggle?.addEventListener('click', () => {
+  const isOpen = menuTools.classList.toggle('search-open');
+  searchToggle.setAttribute('aria-expanded', String(isOpen));
+  searchToggle.setAttribute('aria-label', isOpen ? 'Close menu search' : 'Open menu search');
+
+  if (isOpen) {
+    menuSearchInput.focus();
+  } else {
+    menuSearchInput.value = '';
+    const activeButton = document.querySelector('nav button.active');
+    filterMenu(activeButton?.dataset.category || 'all');
+  }
 });
 
 // Initial call to show all

@@ -1,123 +1,227 @@
-/* ----------------------------------- */
-/* CSS Styling لتصميم مشابه للصورة */
-/* ----------------------------------- */
+* {
+    box-sizing: border-box;
+}
 
 body {
-    /* الخلفية الداكنة الأساسية */
-    background-color: #1a1a1a;
-    color: #ffffff; /* لون النص الأساسي أبيض */
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    background: #f7f5ef;
+    color: #242424;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 1200px;
+.location-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(1120px, calc(100% - 2rem));
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 1rem 0;
 }
 
-/* عنوان الصفحة الرئيسي */
-.header h1 {
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 5px;
-    margin-bottom: 50px;
-    color: #ffffff;
+.location-brand img {
+    display: block;
+    width: 88px;
+    height: 54px;
+    object-fit: contain;
 }
 
-/* القسم الرئيسي الذي يحتوي على الخريطة والمعلومات */
-.main-content {
-    display: flex; /* لترتيب العناصر جنبًا إلى جنب */
-    gap: 40px;
-    text-align: left; /* جعل النص داخل الأقسام يبدأ من اليسار */
-    align-items: flex-start; /* تبدأ العناصر من الأعلى */
+.back-link {
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-/* قسم الخريطة */
+.back-link:hover {
+    color: #F7941D;
+}
+
+.location-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.menu-link {
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+    background: #F7941D;
+    color: #222;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    background: #d97808;
+}
+
+.location-page {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.location-heading {
+    margin-bottom: 1.75rem;
+}
+
+.location-heading > span,
+.info-label {
+    color: #d97808;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.location-heading h1 {
+    margin: 0.35rem 0;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+}
+
+.location-heading p {
+    margin: 0;
+    color: #666;
+}
+
+.location-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 2rem;
+    align-items: stretch;
+}
+
 .map-section {
-    flex: 1; /* يأخذ الخريطة المساحة المتبقية */
-    min-width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* لإعطاء الخريطة بعض الظل */
+    min-height: 430px;
+    overflow: hidden;
+    border: 1px solid #e1ded5;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .map-section iframe {
+    display: block;
     width: 100%;
-    height: 400px; /* يمكن تعديل الارتفاع حسب الرغبة */
-    border: none;
+    height: 380px;
+    border: 0;
 }
 
-/* قسم المعلومات (العنوان، الساعات، إلخ) */
-.info-section {
-    flex: 1.2; /* يأخذ جزء أكبر قليلاً من الخريطة */
-    padding-left: 20px;
+.map-link {
+    display: inline-block;
+    margin: 0.8rem 1rem;
+    color: #d97808;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-/* التنسيق الخاص بالعناوين الفرعية (HOURS, JOIN US) */
-.info-section h2 {
-    font-size: 2em;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    color: #ffffff;
+.map-link:hover {
+    text-decoration: underline;
 }
 
-/* تنسيق العنوان الأساسي ورقم الهاتف */
-.address-info p {
-    font-size: 1.5em;
-    line-height: 1.3;
-    color: #ff0000; /* اللون الأحمر المميز في الصورة */
-    margin: 5px 0;
+.location-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    border-top: 3px solid #F7941D;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.address-info .phone {
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #ffffff; /* لون النص الأبيض لرقم الهاتف */
+.info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
 }
 
-/* تنسيق تفاصيل الإدارة/الملكية */
-.management-details p {
-    margin: 5px 0;
-    font-size: 1em;
+.phone-link {
+    color: #242424;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.management-details .name {
-    color: #ff0000; /* اللون الأحمر لأسماء المالكين */
+.phone-link:hover {
+    color: #F7941D;
 }
 
-/* تنسيق ساعات العمل */
-.hours-details p {
-    margin: 5px 0;
-    font-size: 1.1em;
-    color: #ff0000;
+.whatsapp-link {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    background: #25D366;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-/* تنسيق قسم "Join Us" */
-.join-us-details p {
-    margin: 5px 0;
-    font-size: 1.1em;
+.whatsapp-link:hover {
+    background: #128C7E;
 }
 
-.join-us-details a {
-     color: #ff0000;
-     text-decoration: underline;
+.location-info .platform-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 42px;
 }
 
-/* جعل التصميم متجاوبًا للهواتف */
-@media (max-width: 900px) {
-    .main-content {
-        flex-direction: column; /* ترتيب العناصر فوق بعضها في الشاشات الصغيرة */
-        gap: 20px;
+.location-info .platform-logos img {
+    width: 58px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.hours-block {
+    padding-top: 1.25rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.hours-block p {
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 800px) {
+    .location-layout {
+        grid-template-columns: 1fr;
     }
-    .info-section {
-        padding-left: 0;
-        text-align: center; /* توسيط النص في الشاشات الصغيرة */
-    }
-    .address-info {
-        text-align: center;
-    }
+
     .map-section {
-        min-width: 100%;
+        min-height: 360px;
+    }
+
+    .map-section iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 520px) {
+    .location-header,
+    .location-page {
+        width: min(100% - 1.5rem, 1120px);
+    }
+
+    .location-page {
+        padding-top: 1rem;
+    }
+
+    .location-actions {
+        gap: 0.45rem;
+    }
+
+    .back-link,
+    .menu-link {
+        font-size: 0.78rem;
+    }
+
+    .location-info {
+        padding: 1.25rem;
     }
 }

@@ -66,7 +66,7 @@ function createCart() {
       <legend class="payment-note">Choose an option</legend>
       <label><input type="radio" name="order-option" value="Cash on Delivery" checked> Cash on Delivery</label>
       <label><input type="radio" name="order-option" value="Take Away"> Take Away</label>
-      <label><input type="radio" name="order-option" value="Wish Money"> Wish Money (71/831096)</label>
+      <label><input type="radio" name="order-option" value="Wish Money (71/831096)"> Wish Money (71/831096)</label>
     </fieldset>
     <button class="checkout-button" type="button">Send order on WhatsApp</button>
   `;
